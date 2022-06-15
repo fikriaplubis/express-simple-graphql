@@ -1,2 +1,3 @@
+const classroomResolvers = require('./classroom');
 
-module.exports = [];
+module.exports = [classroomResolvers];

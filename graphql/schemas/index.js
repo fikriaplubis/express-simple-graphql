@@ -1,13 +1,3 @@
-const { gql } = require('apollo-server-express');
+const classRoomType = require('./classroom');
 
-const rootType = gql`
- type Query {
-     root: String
- }
- type Mutation {
-     root: String
- }
-
-`;
-
-module.exports = [rootType];
+module.exports = [classRoomType];
