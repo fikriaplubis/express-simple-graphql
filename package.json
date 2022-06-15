@@ -1,0 +1,36 @@
+{
+  "name": "asa-test-fikri-ap-lubis",
+  "version": "1.0.0",
+  "description": "Buatlah suatu API Server dengan kriteria sebagai berikut:",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon index.js",
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://fikriaplubis:8cvPXynb6S7cSMJ3VfTt@bitbucket.org/asa-ren/asa-test-fikri-ap-lubis.git"
+  },
+  "author": "Fikri",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://bitbucket.org/asa-ren/asa-test-fikri-ap-lubis/issues"
+  },
+  "homepage": "https://bitbucket.org/asa-ren/asa-test-fikri-ap-lubis#readme",
+  "dependencies": {
+    "apollo-server": "^2.0.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "graphql": "^0.13.2",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.20.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
