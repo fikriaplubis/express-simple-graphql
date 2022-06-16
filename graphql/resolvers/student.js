@@ -27,6 +27,15 @@ module.exports = {
             }
 
             return result.message;
+        },
+
+        async assignClassroom(root, args) {
+            const result = await StudentService.assignClassroom(args);
+            if(!result.isOk) {
+                throw new Error(result.message);
+            }
+
+            return result.data;
         }
     },
 

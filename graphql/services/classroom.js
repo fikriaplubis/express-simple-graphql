@@ -14,9 +14,11 @@ module.exports = {
 
         const order = [];
 
-        Object.keys(sort).map(function (key) {
-            order.push([key, sort[key]]);
-        });
+        if(sort) {
+            Object.keys(sort).map(function (key) {
+                order.push([key, sort[key]]);
+            });
+        }
 
         return await Classroom.findAll({ order: order });
     },

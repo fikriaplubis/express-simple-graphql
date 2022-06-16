@@ -43,5 +43,6 @@ module.exports = gql`
         createStudent(form: CreateStudent!): Student
         updateStudent(id: Int!, form: UpdateStudent): Student
         deleteStudent(id: Int!): String
+        assignClassroom(studentId: Int!, classroomId: Int!): Student
     }
 `;

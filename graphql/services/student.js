@@ -132,5 +132,43 @@ module.exports = {
                 data: null
             }
         }
+    },
+
+    async assignClassroom(args) {
+        const { studentId, classroomId } = args;
+        try {
+            const student = await this.findById(studentId);
+            if (!student) {
+                return {
+                    isOk: false,
+                    message: 'Couldn’t find student',
+                    data: null
+                }
+            }
+
+            const classroom = await ClassroomService.findById(classroomId);
+            if (!classroom) {
+                return {
+                    isOk: false,
+                    message: 'Couldn’t find classroom',
+                    data: null
+                }
+            }
+
+            student.classroom = classroomId;
+            student.save();
+
+            return {
+                isOk: true,
+                message: "Success",
+                data: student
+            }
+        } catch (error) {
+            return {
+                isOk: false,
+                message: "Internal server error",
+                data: null
+            }
+        }
     }
 }
