@@ -8,7 +8,7 @@ module.exports = gql`
     }
 
     input ClassroomSort {
-        className: String
+        name: String
     }
 
     type Query {
@@ -16,13 +16,8 @@ module.exports = gql`
     }
 
     type Mutation {
-        createClassroom(name: String!): Response
-        updateClassroom(id: Int!, name: String!): Response
-        deleteClassroom(id: Int!): Response
-    }
-
-    type Response {
-        id: Int!
-        name: String!
+        createClassroom(name: String!): Classroom
+        updateClassroom(id: Int!, name: String!): Classroom
+        deleteClassroom(id: Int!): String
     }
 `;

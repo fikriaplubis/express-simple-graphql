@@ -1,22 +1,38 @@
-const { Classroom } = require("../../database/models");
+const ClassroomService = require('../services/classroom');
 
 module.exports = {
     Mutation: {
         async createClassroom(root, args) {
-            const { name } = args;
-            return Classroom.create({ name });
+            const result = await ClassroomService.create(args);
+            if(!result.isOk) {
+                throw new Error(result.message);
+            }
+
+            return result.data;
         },
+
+        async updateClassroom(root, args) {
+            const result = await ClassroomService.update(args);
+            if(!result.isOk) {
+                throw new Error(result.message);
+            }
+
+            return result.data;
+        },
+
+        async deleteClassroom(root, args) {
+            const result = await ClassroomService.delete(args);
+            if(!result.isOk) {
+                throw new Error(result.message);
+            }
+
+            return result.message;
+        }
     },
 
     Query: {
         async classRooms(root, args) {
-            const { sort } = args;
-            const { className } = sort;
-            return Classroom.findAll({
-                order: [
-                    ['name', className],
-                ],
-            });
+            return await ClassroomService.findAllWithSort(args);
         },
       },
 };
