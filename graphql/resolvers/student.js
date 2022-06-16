@@ -10,6 +10,24 @@ module.exports = {
 
             return result.data;
         },
+
+        async updateStudent(root, args) {
+            const result = await StudentService.update(args);
+            if(!result.isOk) {
+                throw new Error(result.message);
+            }
+
+            return result.data;
+        },
+
+        async deleteStudent(root, args) {
+            const result = await StudentService.delete(args);
+            if(!result.isOk) {
+                throw new Error(result.message);
+            }
+
+            return result.message;
+        }
     },
 
     Query: {

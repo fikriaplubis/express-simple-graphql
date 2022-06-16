@@ -25,16 +25,23 @@ module.exports = gql`
         students(where: StudentFilter, sort: StudentSort): [Student!]
     }
 
-    input StudentInput {
+    input CreateStudent {
         first_name: String!
         last_name: String!
         classroom: Int
         gender: String!
     }
 
+    input UpdateStudent {
+        first_name: String
+        last_name: String
+        classroom: Int
+        gender: String
+    }
+
     extend type Mutation {
-        createStudent(form: StudentInput!): Student
-        updateStudent(id: Int!, form: StudentInput): Student
+        createStudent(form: CreateStudent!): Student
+        updateStudent(id: Int!, form: UpdateStudent): Student
         deleteStudent(id: Int!): String
     }
 `;
