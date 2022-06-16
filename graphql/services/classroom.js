@@ -105,7 +105,7 @@ module.exports = {
             }
 
             return {
-                isOk: false,
+                isOk: true,
                 message: "Success deleted data",
                 data: null
             }
