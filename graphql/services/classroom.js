@@ -5,6 +5,10 @@ module.exports = {
         return await Classroom.findByPk(id);
     },
 
+    async findByName(name) {
+        return await Classroom.findOne({ where: { name: name } });
+    },
+
     async findAllWithSort(args) {
         const { sort } = args;
 

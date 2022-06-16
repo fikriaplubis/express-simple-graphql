@@ -2,6 +2,8 @@ const { gql } = require('apollo-server-express');
 
 module.exports = gql`
 
+    scalar Date
+    
     type Classroom {
         id: Int!
         name: String!
@@ -9,13 +11,14 @@ module.exports = gql`
 
     input ClassroomSort {
         name: String
+        createdAt: Date
     }
 
-    type Query {
+    extend type Query {
         classRooms(sort: ClassroomSort): [Classroom!]
     }
 
-    type Mutation {
+    extend type Mutation {
         createClassroom(name: String!): Classroom
         updateClassroom(id: Int!, name: String!): Classroom
         deleteClassroom(id: Int!): String

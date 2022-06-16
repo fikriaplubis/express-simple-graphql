@@ -34,5 +34,5 @@ module.exports = {
         async classRooms(root, args) {
             return await ClassroomService.findAllWithSort(args);
         },
-      },
+    },
 };
